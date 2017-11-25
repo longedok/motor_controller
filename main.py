@@ -64,6 +64,11 @@ def get_speeds():
 
 def main():
     try:
+        for spinner in SPINNERS:
+            spinner.start()
+
+        sleep(3)
+
         while True:
             # speeds = get_speeds()
             speed = int(raw_input('new speed:'))
