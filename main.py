@@ -59,7 +59,7 @@ def get_speeds():
 
     print 'got speeds: %s' % speeds
 
-    return [speed * 100 for speed in list(reversed(sorted(speeds.values())))[:2]]
+    return [int((speed * 100) / 2.0) + 50 for speed in list(reversed(sorted(speeds.values())))[:2]]
 
 
 def main():
