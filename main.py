@@ -66,9 +66,8 @@ def main():
     try:
         while True:
             # speeds = get_speeds()
-            n = int(sys.argv[1])
-
-            speeds = [int(speed) for speed in sys.argv[2:2+n]]
+            speed = int(raw_input())
+            speeds = []
 
             min_len = min(len(speeds), len(SPINNERS))
 
@@ -76,8 +75,6 @@ def main():
                 print 'spinner %d speed - %s' % (i + 1, speeds[i])
 
                 SPINNERS[i].change_speed(speeds[i])
-
-            sleep(5)
     finally:
         for spinner in SPINNERS:
             spinner.stop()
