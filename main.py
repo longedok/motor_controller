@@ -66,8 +66,8 @@ def main():
     try:
         while True:
             # speeds = get_speeds()
-            speed = int(raw_input())
-            speeds = []
+            speed = int(raw_input('new speed:'))
+            speeds = [speed]
 
             min_len = min(len(speeds), len(SPINNERS))
 
