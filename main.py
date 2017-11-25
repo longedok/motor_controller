@@ -1,5 +1,6 @@
 from time import sleep
 import requests
+import sys
 
 import RPi.GPIO as GPIO
 
@@ -64,7 +65,8 @@ def get_speeds():
 def main():
     try:
         while True:
-            speeds = get_speeds()
+            # speeds = get_speeds()
+            speeds = [int(sys.argv[1])]
 
             min_len = min(len(speeds), len(SPINNERS))
 
