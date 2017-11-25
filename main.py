@@ -66,7 +66,9 @@ def main():
     try:
         while True:
             # speeds = get_speeds()
-            speeds = [int(sys.argv[1])]
+            n = int(sys.argv[1])
+
+            speeds = [int(speed) for speed in sys.argv[2:2+n]]
 
             min_len = min(len(speeds), len(SPINNERS))
 
