@@ -89,7 +89,7 @@ def main():
             for i in range(min_len):
                 SPINNERS[i].stop()
 
-            sleep(2)
+            # sleep(2)
     finally:
         for spinner in SPINNERS:
             spinner.stop()
