@@ -4,7 +4,7 @@ import requests
 import RPi.GPIO as GPIO
 
 
-SPEEDS_URL = 'http://wth2017.hypershape.club/'
+SPEEDS_URL = 'http://88c7b28b.ngrok.io'#'http://wth2017.hypershape.club/'
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -53,15 +53,25 @@ SPINNERS = [
 ]
 
 
+def speed_to_duty_cycle(speed):
+    return int((speed * 100) / 2.0) + 50
+
+
 def get_speeds():
     speeds = requests.get(SPEEDS_URL + 'speeds').json()
+    clicking_rate = requests.get(SPEEDS_URL + 'clicks').json()
 
     print 'got speeds: %s' % speeds
 
-    return [speed * 100 for speed in list(reversed(sorted(speeds.values())))[:2]]
+    return map(speed_to_duty_cycle, [clicking_rate] + [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
 
 
 def main():
+    for spinner in SPINNERS:
+        spinner.start()
+
+    sleep(3)
+
     try:
         while True:
             speeds = get_speeds()
