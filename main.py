@@ -84,7 +84,12 @@ def main():
 
                 SPINNERS[i].change_speed(speeds[i])
 
-            sleep(5)
+            sleep(3)
+
+            for i in range(min_len):
+                SPINNERS[i].stop()
+
+            sleep(2)
     finally:
         for spinner in SPINNERS:
             spinner.stop()
