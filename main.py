@@ -82,7 +82,7 @@ def main():
             for i in range(min_len):
                 print 'spinner %d speed - %s' % (i + 1, speeds[i])
 
-                step = (speeds[i] - SPINNERS[i].speed) / 3.0
+                step = int((speeds[i] - SPINNERS[i].speed) / 3.0)
                 steps = range(SPINNERS[i].speed, speeds[i], step)
                 steps[-1] = speeds[i]
 
