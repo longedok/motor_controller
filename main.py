@@ -80,7 +80,12 @@ def main():
 
     try:
         while True:
-            speeds = get_speeds()
+            try:
+                speeds = get_speeds()
+            except:
+                sleep(5)
+
+                continue
 
             min_len = min(len(speeds), len(SPINNERS))
 
