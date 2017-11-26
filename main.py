@@ -1,10 +1,11 @@
+import os
 from time import sleep
 import requests
 
 import RPi.GPIO as GPIO
 
 
-SPEEDS_URL = 'http://88c7b28b.ngrok.io/'#'http://wth2017.hypershape.club/'
+SPEEDS_URL = os.environ.get('SPEEDS_URL', 'http://wth2017.hypershape.club/')
 
 GPIO.setmode(GPIO.BOARD)
 
