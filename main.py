@@ -4,7 +4,7 @@ import requests
 import RPi.GPIO as GPIO
 
 
-SPEEDS_URL = 'http://0ef8a570.ngrok.io/'#'http://wth2017.hypershape.club/'
+SPEEDS_URL = 'http://wth2017.hypershape.club/'
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -83,7 +83,7 @@ def main():
 
                 SPINNERS[i].change_speed(speeds[i])
 
-            sleep(3)
+            sleep(1.5)
 
             for i in range(min_len):
                 SPINNERS[i].stop()
