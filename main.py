@@ -80,14 +80,20 @@ def main():
             min_len = min(len(speeds), len(SPINNERS))
 
             for i in range(min_len):
-                print 'spinner %d speed - %s' % (i + 1, speeds[i])
+                print 'spinner %d target speed - %s' % (i + 1, speeds[i])
 
                 step = int((speeds[i] - SPINNERS[i].speed) / 3.0)
+
+                if step != 0:
+                    continue
+
                 steps = range(SPINNERS[i].speed, speeds[i], step)
                 steps[-1] = speeds[i]
 
                 for speed_step in steps:
                     SPINNERS[i].change_speed(speed_step)
+                    print 'spinner %d step speed - %s' % (i + 1, speeds[i])
+
                     sleep(1)
 
             # for i in range(min_len):
