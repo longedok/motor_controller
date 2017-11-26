@@ -49,7 +49,7 @@ class Spinner:
 
 SPINNERS = [
     Spinner(18, 16, 22),
-    Spinner(21, 23, 19)
+    # Spinner(21, 23, 19)
 ]
 
 
@@ -82,9 +82,13 @@ def main():
             for i in range(min_len):
                 print 'spinner %d speed - %s' % (i + 1, speeds[i])
 
-                SPINNERS[i].change_speed(speeds[i])
+                step = (speeds[i] - SPINNERS[i].speed) / 3.0
+                steps = range(SPINNERS[i].speed, speeds[i], step)
+                steps[-1] = speeds[i]
 
-            sleep(3)
+                for speed_step in steps:
+                    SPINNERS[i].change_speed(speed_step)
+                    sleep(1)
 
             for i in range(min_len):
                 SPINNERS[i].stop()
