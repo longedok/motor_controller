@@ -73,10 +73,10 @@ def get_speeds():
 
 
 def main():
-    for spinner in SPINNERS[1:]:
-        spinner.start()
-
-    sleep(3)
+    # for spinner in SPINNERS[1:]:
+    #     spinner.start()
+    #
+    # sleep(3)
 
     try:
         while True:
