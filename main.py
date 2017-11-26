@@ -69,7 +69,9 @@ def get_speeds():
 
     print 'got speeds: %s' % speeds
 
-    return [clicking_rate] + map(speed_to_duty_cycle, [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
+    commit_speeds = map(speed_to_duty_cycle,[speed for speed in list(reversed(sorted(speeds.values())))[:1]]) or [0]
+
+    return [clicking_rate] +  commit_speeds
 
 
 def main():
