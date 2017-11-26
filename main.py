@@ -90,8 +90,8 @@ def main():
                     SPINNERS[i].change_speed(speed_step)
                     sleep(1)
 
-            for i in range(min_len):
-                SPINNERS[i].stop()
+            # for i in range(min_len):
+            #     SPINNERS[i].stop()
 
             # sleep(2)
     finally:
