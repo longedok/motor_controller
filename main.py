@@ -63,8 +63,8 @@ def get_speeds():
     clicking_rate = requests.get(SPEEDS_URL + 'clicks').json()
     print 'got clicking rate: %s' % clicking_rate
 
-    return map(speed_to_duty_cycle, [clicking_rate] + [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
-
+    # return map(speed_to_duty_cycle, [clicking_rate] + [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
+    return [100, 100]
 
 def main():
     for spinner in SPINNERS:
