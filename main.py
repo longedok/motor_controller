@@ -4,7 +4,7 @@ import requests
 import RPi.GPIO as GPIO
 
 
-SPEEDS_URL = 'http://3ab95c53.ngrok.io/'#'http://wth2017.hypershape.club/'
+SPEEDS_URL = 'http://0ef8a570.ngrok.io/'#'http://wth2017.hypershape.club/'
 
 GPIO.setmode(GPIO.BOARD)
 
