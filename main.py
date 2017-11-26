@@ -62,7 +62,7 @@ def get_speeds():
     speeds = requests.get(SPEEDS_URL + 'speeds').json()
     clicking_rate = requests.get(SPEEDS_URL + 'clicks').json()
 
-    print "got clicking rate"
+    print "got clicking rate %s" % clicking_rate
 
     clicking_rate = 1 if (clicking_rate - 1) < 0.000001 else 0
 
