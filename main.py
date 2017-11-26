@@ -84,7 +84,7 @@ def main():
 
                 step = int((speeds[i] - SPINNERS[i].speed) / 3.0)
 
-                if step != 0:
+                if step == 0:
                     continue
 
                 steps = range(SPINNERS[i].speed, speeds[i], step)
