@@ -65,11 +65,11 @@ def get_speeds():
 
     print "got clicking rate %s" % clicking_rate
 
-    clicking_rate = 1 if abs(clicking_rate - 1) < 0.000001 else 0
+    clicking_rate = 100 if abs(clicking_rate - 1) < 0.000001 else 0
 
     print 'got speeds: %s' % speeds
 
-    return map(speed_to_duty_cycle, [clicking_rate] + [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
+    return [clicking_rate] + map(speed_to_duty_cycle, [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
 
 
 def main():
