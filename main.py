@@ -1,5 +1,6 @@
 import os
 from time import sleep
+
 import requests
 
 import RPi.GPIO as GPIO
@@ -64,7 +65,7 @@ def get_speeds():
 
     print "got clicking rate %s" % clicking_rate
 
-    clicking_rate = 1 if (clicking_rate - 1) < 0.000001 else 0
+    clicking_rate = 1 if abs(clicking_rate - 1) < 0.000001 else 0
 
     print 'got speeds: %s' % speeds
 
