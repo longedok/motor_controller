@@ -58,12 +58,13 @@ def speed_to_duty_cycle(speed):
 
 
 def get_speeds():
-    speeds = requests.get(SPEEDS_URL + 'speeds').json()
+    # speeds = requests.get(SPEEDS_URL + 'speeds').json()
+    # print 'got speeds: %s' % speeds
     clicking_rate = requests.get(SPEEDS_URL + 'clicks').json()
 
-    print 'got speeds: %s' % speeds
+    print 'got clicking rate: %s' % clicking_rate
 
-    return map(speed_to_duty_cycle, [clicking_rate] + [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
+    return map(speed_to_duty_cycle, [clicking_rate])# + [speed for speed in list(reversed(sorted(speeds.values())))[:1]])
 
 
 def main():
